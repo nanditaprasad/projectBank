@@ -9,12 +9,14 @@
 			<div class="main-center ">
 			
 				<div class="bg-danger" th:if="${param.error}">Invalid username
-					or password.</div>
+				or password.</div>
 				<div class="bg-danger" th:if="${param.logout}">You have been
 					logged out.</div>
 					
 				<form class="form-signin" th:action="@{/index}" method="post">
-					<h2 class="form-signin-heading">Please sign in</h2>
+					<h2 style="text-align: center" class="form-signin-heading">Please Log In</h2>
+					<hr/>
+					
 					<div class="form-group">
 						<label for="username" class="sr-only">Username</label> <input
 							type="text" roleId="username" class="form-control"
@@ -31,15 +33,15 @@
 						<input type="checkbox" name="remember-me" id="remember-me" />
 						&nbsp; Remember me
 					</div>
-					<button class="btn btn-lg btn-primary btn-block" type="submit">Sign
+					<button style="border-radius: 0" class="btn btn-lg btn-success btn-block" type="submit">Log
 						in</button>
 				</form>
 
 				<hr />
 
 				<div class="form-group ">
-					<a type="submit" class="btn btn-info btn-lg btn-block login-button"
-						th:href="@{/signup}">Sign up!</a>
+					<a style="border-radius: 0" type="submit" class="btn btn-info btn-lg btn-block login-button"
+						th:href="@{/signup}">Register</a>
 				</div>
 			</div>
 		</div>

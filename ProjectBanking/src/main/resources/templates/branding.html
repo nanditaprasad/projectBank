@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta http-equiv="Cache-control" content="NO-STORE">
+<script src="angularjs/angular.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!-- jQuery library -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> <!-- Latest compiled JavaScript -->
+<meta charset="ISO-8859-1">
+
+<title>Internet Banking System</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="css/branding.css" type="text/css">
+</head>
+<body>
+
+    <div class="container">
+        <div id="uppernav">
+            <a href="#" class="active">Home <span class="glyphicon glyphicon-home"></span></a>
+            <a href="#">Personal Banking</a>
+            <a href="#">Corporate Banking</a>
+            <a href="#">Insurances</a>
+            <a class="nav navbar-nav navbar-right" href="#">Help <span class="glyphicon glyphicon-question-sign"></span></a>
+        </div>
+    </div>
+    <hr>
+    <div class="container logo">
+        <div class="row">
+            <div class="col-md-10">
+                <p class="logoname"><span class="lgsymb">NPPR</span> NPPR&Co. Bank</p>
+            </div>
+            <div class="col-md-1 reg">
+                <a th:href="@{/signup}" class="btn btn-lg" style="float: right">Register</a>
+            </div>
+            <div class="col-md-1 lgbtn">
+                <a th:href="@{/index}" class="btn btn-success btn-lg" style="float: right">Log In</a>
+            </div>
+        </div>
+    </div>
+
+     <div class="container imagebg">
+        <div class="features">
+            <h3>Welcome To E-Banking</h3>
+            <ul>
+                <li>View your balance</li>
+                <li>Make payments (limits apply)</li>
+                <li>Transfer money between your accounts</li>
+                <li>Set up and manage your regular payments</li>
+                <li>View your transaction details</li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="applynow">
+            <h3>Apply Now</h3><br>
+            <ul class="apply">
+                <a href="#"><li></li>Personal Loan</li></a>
+                <a href="#"><li></li>Vehicle Loan</li></a>
+                <a href="#"><li></li>Credit Card</li></a>
+                <a href="#"><li></li>Current Account</li></a>
+                <a href="#"><li></li>Savings Account</li></a>
+                <a href="#"><li></li>Insurance</li></a>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container cardcont">
+        <div class="row">
+            <div class="col-md-5 services1">
+                <p class="first">Our Top Features</p>
+                <p class="second">Safe, Secure And Convenient Banking</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in consectetur adipiscing elit, Nullam in neque neque malesua.</p>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-6 services2">
+                <dl>
+                    <dt>
+                        <span class="glyphicon glyphicon-lock"></span> Safe and Secure</dt>
+                    <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit</dd>
+                    <dt>
+                        <span class="glyphicon glyphicon-time"></span> Save Time</dt>
+                    <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit</dd>
+                    <dt>
+                        <span class="glyphicon glyphicon-transfer"></span> Transfer Money</dt>
+                    <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit</dd>
+                    <dt>
+                        <span class="glyphicon glyphicon-credit-card"></span> Pay Bills</dt>
+                    <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit</dd>
+                    <dt>
+                        <span class="glyphicon glyphicon-shopping-cart"></span> Shop Online</dt>
+                    <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="container security">
+        <div class="securityinner">
+        <h3>We Put Your Safety And Security First</h3>
+        <p>Whether you are banking online or using our Mobile Banking app, rest assured you are protected by our Secure Banking Promise.</p>
+        <br>
+        <div class="row">
+            <div class="col-md-4">
+                <span class="glyphicon glyphicon-check ssr"></span>
+                <h4>24/7 protection</h4>
+                <p>We will protect you 24/7 by monitoring your account and using the latest technology to keep you safe.</p>
+            </div>
+            <div class="col-md-4">
+                <span class="glyphicon glyphicon-wrench ssr"></span>
+                <h4>Extra support</h4>
+                <p>We will help you protect yourself with tips on staying secure and free tools for extra protection.</p>
+            </div>
+            <div class="col-md-4">
+                <i class="fa fa-line-chart" aria-hidden="true"></i>
+                <span class="glyphicon glyphicon-stats ssr"></span>
+                <h4>Investment Insights</h4>
+                <p>We provide insights to help you make informed decisions</p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="container-fluid footer">
+        <div class="container footerinside">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>Contact us</h4>
+                    <p><span class="glyphicon glyphicon-earphone"></span> +91 8954 789 927</p>
+                    <p>If you need to call us from abroad, you can call us on 0173 334 7007. Not all Telephone Banking
+                        services are available 24 hours a day, seven days a week. Please speak to an adviser for more
+                        information. Calls may be monitored or recorded.</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Products and Services</h4>
+                    <ul>
+                       <a><li>Current Accounts</li></a>
+                       <a><li></li>Credit Cards</li></a>
+                       <a><li></li>Savings</li></a>
+                       <a><li></li>Investments</li></a>
+                       <a><li></li>Loans</li></a>
+                       <a><li></li>Insurance</li></a>
+                    </ul>
+                </div>
+                <div class="col-md-4 backtotop">
+                    <a href="#uppernav"><h4>Back To Top <span class="glyphicon glyphicon-chevron-up"></span></h4></a>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-12 footerend">
+                <a href="#">Privacy</a>
+                <a href="#">Legal</a>
+                <a th:href="@{/termsandconditions}">Terms & Conditions</a>
+                <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,9 +1,13 @@
 body {
 	background-color: transparent;
+	padding: 0 2em;
+	font-family: Arial, sans-serif;
+	color: #024457;
+	/*background: #f2f2f2;*/
 }
 
 html {
-	background: url("/images/bg.png") no-repeat center center fixed;
+	background: url("/images/cardsandphone.png") no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -250,12 +254,7 @@ html {
 	}
 }
 
-body {
-	padding: 0 2em;
-	font-family: Arial, sans-serif;
-	color: #024457;
-	/*background: #f2f2f2;*/
-}
+
 
 h1 {
 	font-family: Verdana;
