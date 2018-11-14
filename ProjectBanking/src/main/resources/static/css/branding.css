@@ -109,8 +109,13 @@
 }
 .applynow {
     margin: auto;
-    padding: 25px;
+    margin-bottom: -10px;
+    padding-bottom: 10px;
     text-align: center;
+}
+.apply {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
 }
 .apply li{
     list-style: none;
@@ -136,7 +141,6 @@
 }
 .cardcont {
     margin: auto;
-
     background-color: #461310; /*#7E211D lighter*/
     padding: 75px;
 }

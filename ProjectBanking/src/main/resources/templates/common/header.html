@@ -12,14 +12,11 @@
 	<link href="/css/bootstrap.min.css" rel="stylesheet" />
 	
 	<!-- Website Font style -->
-	<link rel="stylesheet"
-		href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" />
 	
 	<!-- Google Fonts -->
-	<link href='https://fonts.googleapis.com/css?family=Passion+One'
-		rel='stylesheet' type='text/css' />
-	<link href='https://fonts.googleapis.com/css?family=Oxygen'
-		rel='stylesheet' type='text/css' />
+	<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css' />
+	<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css' />
 	
 	<!--bootstrap date-time picker-->
 	<link href="/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
@@ -31,11 +28,16 @@
 	<!-- Custom CSS -->
 	<!--<link href="css/scrolling-nav.css" rel="stylesheet" />-->
 	<link href="/css/main.css" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
+	<link href="/css/branding.css" rel="stylesheet">
 </head>
 <body>
 	<!-- Navigation -->
 	<div th:fragment="navbar">
-		<img class="img-responsive" src="/images/banner.png" alt="banner" />
+		<!-- <img class="img-responsive" src="/images/banner.png" alt="banner" /> -->
+		<div style="background-color: none">
+			<p class="logoname"><span class="lgsymb">NPRP</span> NPRP&Co. Bank</p>
+        </div>
 
 		<nav class="navbar navbar-default " role="navigation">
 			<div class="container">
@@ -59,45 +61,60 @@
 							data-toggle="dropdown" role="button" aria-haspopup="true"
 							aria-expanded="false">Accounts <span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><a th:href="@{/account/primaryAccount}">Primary</a></li>
+								<li><a th:href="@{/account/primaryAccount}">Primary Account</a></li>
 								<li role="separator" class="divider"></li>
-								<li><a th:href="@{/account/savingsAccount}">Savings</a></li>
+								<li><a th:href="@{/account/savingsAccount}">Savings Account</a></li>
 							</ul></li>
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown" role="button" aria-haspopup="true"
 							aria-expanded="false">Transfer <span class="caret"></span></a>
 							<ul class="dropdown-menu">
 								<li><a th:href="@{/transfer/betweenAccounts}">Between
-										Accounts</a></li>
-								<li><a th:href="@{/transfer/toSomeoneElse}">To Someone
-										Else</a></li>
+										My Accounts</a></li>
+								<li><a th:href="@{/transfer/toSomeoneElse}">Transfer To
+										Beneficiary</a></li>
 								<li role="separator" class="divider"></li>
 								<li><a th:href="@{/transfer/recipient}">Add/Edit
-										Recipient</a></li>
+										Beneficiaries</a></li>
 							</ul></li>
 						<li class="dropdown"> 
 							<span class=""></span>
 							<ul class="dropdown-menu">
 								<li><a th:href="@{/appointment/create}">Schedule an
 										Appointment</a></li>
-							</ul></li>
+							</ul>
+						</li>
 					</ul> 
 					<ul class="nav navbar-nav navbar-right">
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown" role="button" aria-haspopup="true"
 							aria-expanded="false">Settings <span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><a th:href="@{/user/profile}">Profile</a></li>
+								<li><a th:href="@{/user/profile}">My Profile <span class="glyphicon glyphicon-user"></span></a></li>
 								<li role="separator" class="divider"></li>
-										<li><a th:href="@{/user/password2}">Change Old Password</a></li>
+										<li><a th:href="@{/user/password2}">Change Login Password</a></li>
 								<li role="separator" class="divider"></li>
-								<li><a th:href="@{/logout}">Logout</a></li>
-							</ul></li>
+								<li><a th:href="@{/logout}">Change Transaction Password</a></li>
+							</ul>
+						</li>
+						<li class="dropdown"><a href="#" class="dropdown-toggle"
+							data-toggle="dropdown" role="button" aria-haspopup="true"
+							aria-expanded="false">Contact Us <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a><span class="glyphicon glyphicon-earphone"></span> 987-369-8723</a></li>
+								<li role="separator" class="divider"></li>
+								<li><a><span class="glyphicon glyphicon-envelope"></span> customercare@nprpbank.com</a></li>
+							</ul>
+						</li>
+						<li><a th:href="@{/logout}">Logout <span class="glyphicon glyphicon-log-out"></span></a></li>
 					</ul>
+					
 				</div>
 				<!-- /.navbar-collapse -->
+
 			</div>
 			<!-- /.container -->
+
 		</nav>
 	</div>
 
