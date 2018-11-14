@@ -75,20 +75,21 @@
 								<li><a th:href="@{/transfer/recipient}">Add/Edit
 										Recipient</a></li>
 							</ul></li>
-						<li class="dropdown"><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown" role="button" aria-haspopup="true"
-							aria-expanded="false">Appointment <span class="caret"></span></a>
+						<li class="dropdown"> 
+							<span class=""></span>
 							<ul class="dropdown-menu">
 								<li><a th:href="@{/appointment/create}">Schedule an
 										Appointment</a></li>
 							</ul></li>
-					</ul>
+					</ul> 
 					<ul class="nav navbar-nav navbar-right">
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown" role="button" aria-haspopup="true"
-							aria-expanded="false">Me <span class="caret"></span></a>
+							aria-expanded="false">Settings <span class="caret"></span></a>
 							<ul class="dropdown-menu">
 								<li><a th:href="@{/user/profile}">Profile</a></li>
+								<li role="separator" class="divider"></li>
+										<li><a th:href="@{/user/password2}">Change Old Password</a></li>
 								<li role="separator" class="divider"></li>
 								<li><a th:href="@{/logout}">Logout</a></li>
 							</ul></li>
