@@ -91,7 +91,9 @@ public class TransactionServiceImpl implements TransactionService {
 
             PrimaryTransaction primaryTransaction = new PrimaryTransaction(newDate1,"Between account transfer from "+transferFrom+" to "+transferTo, "Account", "Finished", Double.parseDouble(amount), primaryAccount.getAccountBalance(), primaryAccount);
             primaryTransactionDao.save(primaryTransaction);
-        }  if (transferFrom.equalsIgnoreCase("Savings") && transferTo.equalsIgnoreCase("Primary")) {
+            SavingsTransaction savingsTransaction = new SavingsTransaction(newDate1,"Between account transfer from "+transferFrom+" to "+transferTo, "Account", "Finished", Double.parseDouble(amount), savingsAccount.getAccountBalance(), savingsAccount);
+            savingsTransactionDao.save(savingsTransaction);
+        }  else if (transferFrom.equalsIgnoreCase("Savings") && transferTo.equalsIgnoreCase("Primary")) {
             primaryAccount.setAccountBalance(primaryAccount.getAccountBalance().add(new BigDecimal(amount)));
             savingsAccount.setAccountBalance(savingsAccount.getAccountBalance().subtract(new BigDecimal(amount)));
             primaryAccountDao.save(primaryAccount);
@@ -105,6 +107,8 @@ public class TransactionServiceImpl implements TransactionService {
 
             SavingsTransaction savingsTransaction = new SavingsTransaction( newDate1,"Between account transfer from "+transferFrom+" to "+transferTo, "Transfer", "Finished", Double.parseDouble(amount), savingsAccount.getAccountBalance(), savingsAccount);
             savingsTransactionDao.save(savingsTransaction);
+            PrimaryTransaction primaryTransaction = new PrimaryTransaction(newDate1,"Between account transfer from "+transferFrom+" to "+transferTo, "Account", "Finished", Double.parseDouble(amount), primaryAccount.getAccountBalance(), primaryAccount);
+            primaryTransactionDao.save(primaryTransaction);
         }
         else {
             throw new Exception("Invalid Transfer");

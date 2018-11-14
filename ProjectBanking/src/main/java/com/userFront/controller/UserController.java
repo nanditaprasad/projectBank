@@ -102,7 +102,7 @@ public class UserController {
 		User user = userService.findByUsername(newUser.getUsername());
 		String encryptedTransactionPassword;
 		String encryptOldTransactionPassword = PasswordEncoder.encode(oldTransactionPassword);
-		System.out.println(user.getPassword());
+		System.out.println(user.getTransactionPassword());
 		System.out.println(encryptOldTransactionPassword);
 		System.out.println(newTransactionPassword);
 		System.out.println(retypeNewTransactionPassword);
@@ -110,9 +110,9 @@ public class UserController {
 		user.setUsername(newUser.getUsername());
 		
 		
-		if(user.getPassword().equals(encryptOldTransactionPassword) && newTransactionPassword.equals(retypeNewTransactionPassword)){
+		if(user.getTransactionPassword().equals(encryptOldTransactionPassword) && newTransactionPassword.equals(retypeNewTransactionPassword)){
 		encryptedTransactionPassword = PasswordEncoder.encode(newTransactionPassword);
-		user.setPassword(encryptedTransactionPassword);
+		user.setTransactionPassword(encryptedTransactionPassword);
 
 		model.addAttribute("user", user);
 
@@ -125,7 +125,7 @@ public class UserController {
 //		}
 		return "changeTransactionPassword";
 	}
-
+	
 	
 	
 	
