@@ -15,14 +15,14 @@
         <div class="col-lg-6 col-md-6">
         </div>
         <div class="col-lg-6 col-md-6">
-            <div class="panel panel-success">
+            <div class="panel panel-danger">
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-6">
                             <h2>Savings Balance: </h2>
                         </div>
                         <div class="col-xs-6 text-right">
-                            <h1><i class="fa fa-usd" aria-hidden="true"></i> <span th:text="${savingsAccount.accountBalance}">...</span></h1>
+                            <h1><i class="fa fa-rupee" aria-hidden="true"></i> <span th:text="${savingsAccount.accountBalance}">...</span></h1>
                         </div>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
     <!-- /.row -->
 
     <div class="table-responsive">
-        <table id="example" class="table table-bordered table-hover table-striped">
+        <table id="example" class="table table-bordered table-striped">
             <thead>
             <tr>
                 <th>Post Date</th>
@@ -51,7 +51,7 @@
             </thead>
             <tbody>
             <tr data-th-each="savingsTransaction : ${savingsTransactionList}">
-                <td data-th-text="${savingsTransaction.date}">...</td>
+                <td data-th-text="${savingsTransaction.newDate}">...</td>
                 <td data-th-text="${savingsTransaction.description}">...</td>
                 <td data-th-text="${savingsTransaction.type}">...</td>
                 <td data-th-text="${savingsTransaction.status}">...</td>

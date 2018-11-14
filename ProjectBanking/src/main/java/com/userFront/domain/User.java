@@ -162,21 +162,7 @@ public class User implements UserDetails{
         this.enabled = enabled;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "userId=" + userId +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                ", phone='" + phone + '\'' +
-              
-                ", recipientList=" + recipientList +
-                ", userRoles=" + userRoles +
-                '}';
-    }
+    
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -247,6 +233,15 @@ public class User implements UserDetails{
 
 	public void setCif(String cif) {
 		this.cif = cif;
+	}
+
+	@Override
+	public String toString() {
+		return "User [userId=" + userId + ", username=" + username + ", password=" + password + ", transactionPassword="
+				+ transactionPassword + ", firstName=" + firstName + ", lastName=" + lastName + ", cif=" + cif
+				+ ", ifsc=" + ifsc + ", branchName=" + branchName + ", email=" + email + ", phone=" + phone + ", pan="
+				+ pan + ", enabled=" + enabled + ", primaryAccount=" + primaryAccount + ", savingsAccount="
+				+ savingsAccount + ", recipientList=" + recipientList + ", userRoles=" + userRoles + "]";
 	}
 
 

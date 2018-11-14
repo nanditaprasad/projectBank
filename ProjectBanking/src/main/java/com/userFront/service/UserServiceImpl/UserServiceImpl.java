@@ -63,7 +63,9 @@ public class UserServiceImpl implements UserService{
         	LOG.info(user.getFirstName());
             String encryptedPassword = passwordEncoder.encode(user.getPassword());
             user.setPassword(encryptedPassword);
-
+            String encryptedPassword1 = passwordEncoder.encode(user.getTransactionPassword());
+            user.setTransactionPassword(encryptedPassword1);
+            
             user.setPrimaryAccount(accountService.createPrimaryAccount());
             user.setSavingsAccount(accountService.createSavingsAccount());
 

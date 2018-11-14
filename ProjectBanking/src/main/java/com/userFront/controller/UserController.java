@@ -42,6 +42,16 @@ public class UserController {
 		return "password2";
 	}
 
+	@RequestMapping(value = "/changeTransactionPassword", method = RequestMethod.GET)
+	public String password3(Principal principal, Model model) {
+		User user = userService.findByUsername(principal.getName());
+
+		model.addAttribute("user", user);
+
+		return "changeTransactionPassword";
+	}
+
+	
 	@RequestMapping(value = "/profile", method = RequestMethod.POST)
 	public String profilePost(@ModelAttribute("user") User newUser, Model model) {
 		User user = userService.findByUsername(newUser.getUsername());
@@ -87,4 +97,36 @@ public class UserController {
 		return "password2";
 	}
 
+	@RequestMapping( value = "/changeTransactionPassword", method = RequestMethod.POST )
+	public String profilePost3(@RequestParam("oldtransactionpassword") String oldTransactionPassword ,@RequestParam("newtransactionpassword") String newTransactionPassword ,@RequestParam("retypetransactionpassword") String retypeNewTransactionPassword,@ModelAttribute("user") User newUser, Model model ) {
+		User user = userService.findByUsername(newUser.getUsername());
+		String encryptedTransactionPassword;
+		String encryptOldTransactionPassword = PasswordEncoder.encode(oldTransactionPassword);
+		System.out.println(user.getTransactionPassword());
+		System.out.println(encryptOldTransactionPassword);
+		System.out.println(newTransactionPassword);
+		System.out.println(retypeNewTransactionPassword);
+		System.out.println(newUser.getUsername());
+		user.setUsername(newUser.getUsername());
+		
+		
+		if(user.getTransactionPassword().equals(encryptOldTransactionPassword) && newTransactionPassword.equals(retypeNewTransactionPassword)){
+		encryptedTransactionPassword = PasswordEncoder.encode(newTransactionPassword);
+		user.setTransactionPassword(encryptedTransactionPassword);
+
+		model.addAttribute("user", user);
+
+		userService.saveUser(user);
+		return "changeTransactionPassword";
+		}
+//		else {
+//			encryptedPassword = newUser.getPassword();
+//			user.setPassword(encryptedPassword);
+//		}
+		return "changeTransactionPassword";
+	}
+	
+	
+	
+	
 }

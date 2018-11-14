@@ -19,7 +19,7 @@ SavingsTransaction {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
+	private String newDate;
 	private String description;
 	private String type;
 	private String status;
@@ -30,13 +30,11 @@ SavingsTransaction {
 	@JoinColumn(name = "savings_account_id")
 	private SavingsAccount savingsAccount;
 
-	public SavingsTransaction() {
+	public SavingsTransaction(){}
 
-	}
-
-	public SavingsTransaction( String description, String type, String status, double amount,
+	public SavingsTransaction( String newDate , String description, String type, String status, double amount,
 			BigDecimal availableBalance, SavingsAccount savingsAccount) {
-	
+		this.newDate = newDate;
 		this.description = description;
 		this.type = type;
 		this.status = status;
@@ -102,5 +100,15 @@ SavingsTransaction {
 	public void setSavingsAccount(SavingsAccount savingsAccount) {
 		this.savingsAccount = savingsAccount;
 	}
+
+	public String getNewDate() {
+		return newDate;
+	}
+
+	public void setNewDate(String newDate) {
+		this.newDate = newDate;
+	}
+
+	
 
 }
