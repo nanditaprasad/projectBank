@@ -19,7 +19,7 @@ public class PrimaryTransaction {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
+	private String newDate;
 	private String description;
 	private String type;
 	private String status;
@@ -34,9 +34,9 @@ public class PrimaryTransaction {
 
 	}
 
-	public PrimaryTransaction( String description, String type, String status, double amount,
+	public PrimaryTransaction(String date, String description, String type, String status, double amount,
 			BigDecimal availableBalance, PrimaryAccount primaryAccount) {
-		
+		 this.setNewDate(date);
 		this.description = description;
 		this.type = type;
 		this.status = status;
@@ -101,5 +101,15 @@ public class PrimaryTransaction {
 	public void setPrimaryAccount(PrimaryAccount primaryAccount) {
 		this.primaryAccount = primaryAccount;
 	}
+
+	public String getNewDate() {
+		return newDate;
+	}
+
+	public void setNewDate(String newDate) {
+		this.newDate = newDate;
+	}
+
+	
 
 }
