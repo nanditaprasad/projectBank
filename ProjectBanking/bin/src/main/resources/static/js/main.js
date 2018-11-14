@@ -3,7 +3,29 @@
     $.toggleShowPassword = function (options) {
         var settings = $.extend({
             field: "#password",
+            field1: "#transactionPassword",
             control: "#toggle_show_password",
+        }, options);
+
+        var control = $(settings.control);
+        var field = $(settings.field)
+        var field1 = $(settings.field1)
+
+        control.bind('click', function () {
+            if (control.is(':checked')) {
+                field.attr('type', 'text');
+                field1.attr('type', 'text');
+            } else {
+                field.attr('type', 'password');
+                field1.attr('type', 'password');
+            }
+        })
+    };
+
+$.toggleShowTransactionPassword = function (options) {
+        var settings = $.extend({
+            field: "#transactionPassword",
+            control: "#toggle_show_transactionPassword",
         }, options);
 
         var control = $(settings.control);
@@ -17,6 +39,9 @@
             }
         })
     };
+
+
+
 
     $.transferDisplay = function () {
         $("#transferFrom").change(function() {

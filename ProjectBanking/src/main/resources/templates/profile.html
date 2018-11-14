@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" ng-app="">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <head th:replace="common/header :: common-header" />
 
 <body roleId="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -9,7 +10,7 @@
             <div class="col-md-6">
                 <h2 class="title">My Profile</h2>
                 <hr/>
-                <form method="post" th:action="@{/user/profile}">
+                <form name="registerForm" method="post" th:action="@{/user/profile}" novalidate="novalidate">
                     <input type="hidden" name="id" th:value="${user.userId}" />
 
                     <div class="form-group">
@@ -20,7 +21,8 @@
                                     <i class="fa fa-user fa" aria-hidden="true"></i>
                                 </span>
                                 <input type="text" class="form-control" th:value="${user.firstName}" id="firstName" name="firstName" roleId="firstname" placeholder="Enter your first name"
-                                    required="required" />
+                                   ng-model="firstName" ng-required="true" />
+                                    <span style="color: red" ng-show="registerForm.firstName.$error.required">First Name is required</span>
                             </div>
                         </div>
                     </div>
@@ -33,7 +35,8 @@
                                     <i class="fa fa-user fa" aria-hidden="true"></i>
                                 </span>
                                 <input type="text" class="form-control" th:value="${user.lastName}" id="lastName" name="lastName" roleId="lastName" placeholder="Enter your last name"
-                                    required="required" />
+                                 ng-model="lastName"   ng-required="true" />
+                                     <span style="color: red" ng-show="registerForm.lastName.$error.required">Last Name is required</span>
                             </div>
                         </div>
                     </div>
@@ -46,7 +49,7 @@
                                     <i class="fa fa-phone fa" aria-hidden="true"></i>
                                 </span>
                                 <input type="text" class="form-control" th:value="${user.phone}" id="phone" name="phone" roleId="phone" placeholder="xxx-xxx-xxxx"
-                                    required="required" />
+                                   ng-model="phone" ng-required="true" />
                             </div>
                         </div>
                     </div>
@@ -59,8 +62,12 @@
                                 <span class="input-group-addon">
                                     <i class="fa fa-envelope fa" aria-hidden="true"></i>
                                 </span>
-                                <input type="text" class="form-control" th:value="${user.email}" id="email" name="email" roleId="email" placeholder="Enter your Email"
-                                    required="required" />
+                                <input type="email" class="form-control" th:value="${user.email}" id="email" name="email" roleId="email" placeholder="Enter your Email"
+                                    ng-required="true" />
+                                    <span style="color: red">
+                                      <span ng-show="registerForm.email.$error.required">Email is required.</span>
+                                      <span ng-show="registerForm.email.$error.email">Invalid email address.</span>
+                                    </span>
                             </div>
                         </div>
                     </div>
@@ -74,7 +81,7 @@
                                     <i class="fa fa-users fa" aria-hidden="true"></i>
                                 </span>
                                 <input type="text" class="form-control" th:value="${user.username}" id="username" name="username" roleId="username" placeholder="Enter your Username"
-                                    required="required" />
+                                    ng-required="true" />
                             </div>
                         </div>
                     </div>
